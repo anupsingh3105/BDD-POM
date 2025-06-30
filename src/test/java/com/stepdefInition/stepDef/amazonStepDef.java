@@ -19,7 +19,6 @@ public class amazonStepDef extends BaseTest {
 
         amazonStepDef.openLoginPage();
 
-
     }
 
     @When("user click on search field")
@@ -49,5 +48,5 @@ public class amazonStepDef extends BaseTest {
     @When("user searches for {string} using the search bar")
     public void userSearchesForUsingTheSearchBar(String arg0) {
     }
-    
+
 }

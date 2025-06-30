@@ -5,17 +5,37 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import methods.configReader;
 
 public class WebDriverUtil {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
         if (driver == null) {
-//          System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-//            WebDriverManager.edgedriver().setup();
-            WebDriverManager.chromedriver().setup();
-            // Initialize ChromeDriver with options
-             driver = new ChromeDriver();
+            String browser = configReader.getProperty("browser").toLowerCase();
+
+            switch (browser) {
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("--start-maximized");
+                    driver = new ChromeDriver(chromeOptions);
+                    break;
+
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                    break;
+
+                case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver();
+                    break;
+
+                default:
+                    throw new RuntimeException("Unsupported browser in config: " + browser);
+            }
         }
         return driver;
     }

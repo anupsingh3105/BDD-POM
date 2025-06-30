@@ -11,4 +11,4 @@ Feature: Functionality on Amazon
 
     Examples:
       | product |
-      | laptop     |
+      | laptop  |

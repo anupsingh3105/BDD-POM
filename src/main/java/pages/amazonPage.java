@@ -1,19 +1,14 @@
 package pages;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import methods.configReader;
 
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class amazonPage extends BasePage {
@@ -62,8 +57,8 @@ public class amazonPage extends BasePage {
     }
 
     public void login() {
-        String url = "https://www.amazon.in/";
-        driver.get(url);
+        String urlAm = configReader.getProperty("urlA");
+        driver.get(urlAm);
     }
 
     public void searchBox() {

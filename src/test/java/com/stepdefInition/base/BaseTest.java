@@ -7,7 +7,7 @@ import utils.WebDriverUtil;
 
 public class BaseTest {
 
-    protected static  WebDriver driver;
+    protected static WebDriver driver;
 
     public void setUp() {
         driver = WebDriverUtil.getDriver();
