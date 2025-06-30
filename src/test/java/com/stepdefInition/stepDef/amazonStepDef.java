@@ -39,4 +39,15 @@ public class amazonStepDef extends BaseTest {
     public void userEnterTheLoginCredentials() {
         amazonStepDef.login();
     }
+
+
+    @When("user searches {string} on search bar")
+    public void userSearchesProductsOnSearchBar(String product) {
+    }
+
+
+    @When("user searches for {string} using the search bar")
+    public void userSearchesForUsingTheSearchBar(String arg0) {
+    }
+    
 }

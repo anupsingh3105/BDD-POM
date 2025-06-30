@@ -34,4 +34,5 @@ public class loginStep extends BaseTest {
     public void selectTheCitys() throws InterruptedException {
         loginPage.selectFromCity();
     }
+
 }
